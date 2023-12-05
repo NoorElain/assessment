@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FasebookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Data_Table2">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="255" />
+    <Property Name="User_Password" Type="varchar" MaxLength="255" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Gender_bin" Type="binary" MaxLength="1" />
+    <Property Name="Gender_var" Type="varchar" MaxLength="255" />
+    <Property Name="Phone" Type="varchar" MaxLength="11" />
+    <Property Name="City" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="New_Admin">
+    <Key>
+      <PropertyRef Name="Admin_id" />
+    </Key>
+    <Property Name="Admin_id" Type="int" Nullable="false" />
+    <Property Name="admin_username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="admin_pass" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="FasebookModelStoreContainer">
+    <EntitySet Name="Data_Table2" EntityType="Self.Data_Table2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="New_Admin" EntityType="Self.New_Admin" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,65 @@
+﻿<Page x:Class="NoorElain_0522069_Day1.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NoorElain_0522069_Day1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Profile">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="779*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="279*"/>
+            <RowDefinition Height="76*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="Gray" Margin="208,10,3,14" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="387*"/>
+                <ColumnDefinition Width="81*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Profile : " HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40" Margin="50,0,0,0" Width="158" Grid.Column="1"/>
+            <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40" Width="158" Margin="195,0,0,0" Grid.Column="1"/>
+        </Grid>
+        <Label Style="{StaticResource labeStyle}" Content="Username :" HorizontalAlignment="Left" Margin="111,2,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Height="33" Grid.Row="1" Width="109"/>
+        <TextBox x:Name="User_T" HorizontalAlignment="Left" Margin="236,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" Height="32" Grid.Column="1" Grid.Row="1" TextChanged="User_T_TextChanged"/>
+        <Label Style="{StaticResource labeStyle}" Content="Password :" HorizontalAlignment="Left" Margin="112,45,0,0" VerticalAlignment="Top" FontSize="20" Width="106" Grid.Column="1" Grid.Row="1" Height="37"/>
+        <PasswordBox x:Name="pass_T" HorizontalAlignment="Left" Margin="236,50,0,0" VerticalAlignment="Top" Width="428" Height="26" Grid.Column="1" Grid.Row="1"/>
+        <Label Style="{StaticResource labeStyle}" Content="Age :" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Width="76" Grid.Column="1" Margin="127,87,0,0" Grid.Row="1" Height="37"/>
+        <TextBox x:Name="Age_T" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" Height="30" Grid.Column="1" Margin="238,93,0,0" Grid.Row="1"/>
+        <Label Style="{StaticResource labeStyle}" Content="Gender :" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Width="86" Grid.Column="1" Margin="122,133,0,0" Grid.Row="1" Height="37"/>
+        <Label Style="{StaticResource labeStyle}" Content="Phone :" HorizontalAlignment="Left" Margin="127,191,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Height="32" Grid.Row="1" Width="76"/>
+        <TextBox x:Name="phone_T" HorizontalAlignment="Left" Margin="236,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" Height="32" Grid.Column="1" Grid.Row="1"/>
+        <Label Style="{StaticResource labeStyle}" Content="City :" HorizontalAlignment="Left" Margin="139,235,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Height="33" Grid.Row="1" Width="53"/>
+        <TextBox x:Name="City_T" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" Height="30" Grid.Column="1" Margin="238,238,0,0" Grid.Row="1"/>
+        <TextBox x:Name="Gender_T" HorizontalAlignment="Left" Margin="236,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" Height="32" Grid.Column="1" Grid.Row="1"/>
+        <Button Grid.Column="1" Content="Log out" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="34" Width="91" Grid.Row="1" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <DataGrid Name="data_drid" Grid.Column="1" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="5,4,5,10" SelectionChanged="data_drid_SelectionChanged"/>
+        <ItemsControl Background="Black" Margin="10,7,614,3" Grid.Column="1">
+            <UIElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </UIElement.RenderTransform>
+            <ImageBrush ImageSource="black.png"/>
+
+        </ItemsControl>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
+</Page>
